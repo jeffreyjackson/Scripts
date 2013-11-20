@@ -1,0 +1,8 @@
+#!/bin/bash
+
+#This needs to be added as a build phase in Xcode
+
+bN=$(/usr/libexec/PlistBuddy -c "Print CFBundleVersion" "$INFOPLIST_FILE")
+bN=$((bN += 1))
+bN=$(printf "%d" $bN)
+/usr/libexec/PlistBuddy -c "Set :CFBundleVersion $bN" "$INFOPLIST_FILE"
