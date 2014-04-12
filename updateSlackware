@@ -1,0 +1,6 @@
+#!/bin/bash
+
+slackpkg update
+slackpkg clean-system
+slackpkg upgrade-all
+slackpkg install-new
